@@ -17,9 +17,14 @@ function findUserByUsername(username){
     
 }
 
+function removeUser(id){
+    return db('users').where({id:id}).del()
+}
+
 module.exports = {
     getAllUsers,
     addUser,
-    findUserByUsername
+    findUserByUsername,
+    removeUser
 }
 
