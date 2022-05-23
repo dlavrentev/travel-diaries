@@ -46,6 +46,27 @@ function updateDestination(id,newDestination){
      .update(newDestination)
 }
 
+function getUserDestinations(user_id){
+    return db('users')
+    .join('destinations','users.id','destinations.user_id')
+    .select(
+        "users.id as UserId",
+        "users.imageUrl as UserImage",
+        "destinations.id as DestinationId",
+        "destinations.title as DestinationTitle"
+    )
+    .where({user_id:user_id})
+}
+
+function groupDestinations(){
+    return db('destinations').count()
+    .groupBy("title")
+    .select(
+        "destination.id",
+        "destinations.title"
+    )
+}
+
 module.exports = {
     getAllUsers,
     addUser,
@@ -55,6 +76,8 @@ module.exports = {
     findUserById,
     addDestination,
     removeDestination,
-    updateDestination
+    updateDestination,
+    getUserDestinations,
+    groupDestinations
 }
 
