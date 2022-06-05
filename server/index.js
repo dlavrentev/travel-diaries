@@ -8,6 +8,8 @@ const Travels = require('./dbHelpers')
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 const bcrypt = require('bcryptjs')
+const cors = require('cors');
+app.use(cors({origin:'*'}))
 
 // Import Routers
 

@@ -1,10 +1,11 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect, useContext} from 'react'
 import axios from 'axios';
 import {Link} from "react-router-dom"
 import './header.css'
+import { UserContext } from '../../context/UserContext';
 
 
-export default function Header() {
+export default function Header({baseUrl}) {
   const [signupSuccess,setSignupSuccess]=useState(false)
   const [loggedIn,setLoggedIn]=useState(false)
   const [modal,setModal]=useState(false)
@@ -14,21 +15,41 @@ export default function Header() {
   const [imageUrl,setImageUrl]=useState('')
   const [message,setMessage]=useState('')
 
+  const {user,setUser}=useContext(UserContext)
+
   
   
 
   const handleSignup=(e)=>{
     e.preventDefault()
-    
+    axios.post(`${baseUrl}/users/register`,{
+      username,password,imageUrl
+    })
+    .then(res=>{
+      setSignupSuccess(true)
+      console.log(res.data)
+    })
+    .catch(err=>console.log(err))
+
   }
  
   const handleLogin=(e)=>{ 
     e.preventDefault()
-   
+    axios.post(`${baseUrl}/users/login`,{
+      username,password
+    })
+    .then(res=>{
+      setUser(res.data)
+      setLoggedIn(true)
+      setModal(false)
+    })
+    .catch(err=>console.log(err))
+
   }
 
   const handleLogout=()=>{
-    
+    setUser({})
+    setLoggedIn(false)
   }
 
 
@@ -38,9 +59,10 @@ export default function Header() {
         {
          loggedIn ?
          <div className='profile-container-loggedin'>
+           <button><Link to="/add-destination">Add a new destination</Link></button>
            <div className='img-container'>
-            <p>Welcome {username}</p>
-            <img src={imageUrl} alt="avatar"/>
+            <p>Welcome {user.username}</p>
+            <img src={user.imageUrl} alt="avatar"/>
            </div>  
            <button className='logout-btn' onClick={handleLogout}>Logout</button>
          </div>

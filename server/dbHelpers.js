@@ -4,7 +4,7 @@ const db = knex(config.development)
 
 
 function getAllUsers(){
-    return db('users').orderBy('id','desc')
+    return db('users')
 }
 
 async function addUser(user){
