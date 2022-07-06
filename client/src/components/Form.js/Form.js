@@ -11,8 +11,12 @@ const [description,setDescription]=useState('')
 const [imageUrl,setImageUrl]=useState('')
 const {user,setUser}=useContext(UserContext)
 
-const submitButton() => {
-
+const submitButton= () => {
+    if (submit === true) {
+     setSubmit(false)
+    } else {
+     setSubmit(true)
+    }
 }
 
 const addNewDestination=(e)=>{ 
@@ -43,9 +47,12 @@ const addNewDestination=(e)=>{
                 <label>Add Image</label>
                 <input value={imageUrl} onChange={(e)=>{setImageUrl(e.target.value)}} placeholder='Enter image url'/>
            </div>
-           <button type="submit">Submit</button>
+           <button type="submit" onClick={submitButton}>Submit</button>
+           
+
+
            {
-              submit ? <p style={{"color":"green"}}>Add one for the team!</p> : <p style={{"color":"green"}}>You successfully added a destination!</p> 
+              submit ? <p style={{"color":"green"}}>Can you add another one?</p> : <p style={{"color":"green"}}>Come on! One more!</p> 
            }
            
           

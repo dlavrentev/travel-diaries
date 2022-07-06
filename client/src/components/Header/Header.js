@@ -55,7 +55,7 @@ export default function Header({baseUrl}) {
 
   return (
     <div className='header-container'>
-      <h1><a href="/">Travel Diaries</a></h1>
+      <h1><Link to="/">Travel Diaries</Link></h1>
         {
          loggedIn ?
          <div className='profile-container-loggedin'>
