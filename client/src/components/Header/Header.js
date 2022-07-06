@@ -34,9 +34,6 @@ export default function Header({baseUrl}) {
 
   }
  
-  const deleteError=() => {
-    setErrorlog(false);
-  }
 
 
   const handleLogin=(e)=>{ 
