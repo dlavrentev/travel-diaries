@@ -31,7 +31,7 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.7;
-  background-color: var(--color-white);
+  background-color: #dedede;
 }
 
 /* ========================== MEDIA QUERIES (MEDIUM DEVICES) ======================= */

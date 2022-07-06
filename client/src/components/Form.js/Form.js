@@ -28,11 +28,11 @@ const addNewDestination=(e)=>{
            <h1>Add new destination</h1>
            <div className='input-container'>
                 <label>Destination</label>
-                <input value={title} onChange={(e)=>{setTitle(e.target.value)}} placeholder='Enter destination'/>
+                <input value={title} onChange={(e)=>{setTitle(e.target.value)}} placeholder='Enter destination' maxlength="20"/>
            </div>
            <div className='input-container'>
                 <label>Description</label>
-                <textarea value={description} onChange={(e)=>{setDescription(e.target.value)}} placeholder='Enter description'></textarea>
+                <textarea value={description} onChange={(e)=>{setDescription(e.target.value)}} placeholder='Enter description' maxlength="80"></textarea>
            </div>
            <div className='input-container'>
                 <label>Add Image</label>

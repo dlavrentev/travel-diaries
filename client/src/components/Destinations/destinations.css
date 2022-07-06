@@ -1,39 +1,77 @@
+.destinations-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .destinations-container {
   min-height: 100vh;
-  padding: 20px;
+  padding: 50px;
   width: 100%;
-  /* background-color: rgb(165, 165, 230); */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
+
 
 /* DESTINATION CARD */
 .destination-card {
   height: 450px;
   width: 90%;
-  /* background-color: aqua; */
+  background-color: var(--color-blue-light);
   margin: 16px 16px 0 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 8px;
-  -webkit-box-shadow: 6px 6px 4px 2px rgba(0, 0, 0, 0.61);
-  box-shadow: 6px 6px 4px 2px rgba(0, 0, 0, 0.61);
+  justify-content: center;
+  text-align: center;
+  border-radius: 2rem;
+  border: solid 2px var(--color-blue-dark);
+  /* -webkit-box-shadow:0px 10px 39px 10px rgba(62,66,66,0.4);
+  -moz-box-shadow: 0px 10px 39px 10px rgba(62,66,66,0.4);
+  box-shadow: 0px 10px 39px 10px rgba(62,66,66,0.4); */
 }
 .destination-img {
-  width: 100%;
-  height: 200px;
+  width: 80%;
+  height: 40%;
+  background: var(--color-blue-dark);
+  border-radius: 2rem;
+  border: solid 4px var(--color-blue-dark);
 }
 .destination-info {
-  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+.destination-info p {
+  width: 80%;
+}
+
 .destination-card button {
   background-color: rgb(218, 76, 76);
   border: none;
   border-radius: 8px;
   padding: 8px 16px;
-  margin-top: 10px;
+  margin-top: 2rem;
   cursor: pointer;
   color: white;
+}
+
+/* ========================== MEDIA QUERIES (MEDIUM DEVICES) ======================= */
+
+@media screen and (max-width: 1024px) {
+  .destinations-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================== MEDIA QUERIES (SMALL DEVICES) ======================= */
+
+@media screen and (max-width: 600px) {
+  .destinations-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
