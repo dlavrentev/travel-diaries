@@ -15,11 +15,12 @@ html {
 }
 
 :root {
-  --color-bg: #f7fff7;
   --color-blue-dark: #1a535c;
   --color-blue-light: #4ecdc4;
   --color-red: #FF6b6b;
   --color-yellow: #FFE66D;
+  --color-black: rgb(23, 23, 23);
+  --color-white: whitesmoke;
 }
 
 
@@ -30,7 +31,7 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.7;
-  background: var(--color-bg);
+  background-color: var(--color-white);
 }
 
 /* ========================== MEDIA QUERIES (MEDIUM DEVICES) ======================= */

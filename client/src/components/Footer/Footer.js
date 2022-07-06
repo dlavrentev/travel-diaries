@@ -4,7 +4,7 @@ import './footer.css'
 export default function Footer() {
   return (
     <div className='footer-container'>
-      Footer
+      2022
     </div>
   )
 }
