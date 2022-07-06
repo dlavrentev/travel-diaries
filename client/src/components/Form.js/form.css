@@ -2,7 +2,7 @@
   min-height: 100vh;
 }
 .add-destination-form {
-  background-color: rgb(218, 76, 76);
+  background-color: var(--color-red);
   width: 60%;
   margin: 10% auto;
   display: flex;
@@ -10,7 +10,7 @@
   align-items: center;
   padding: 20px;
   border-radius: 8px;
-  color: white;
+  color: var(--color-white);
 }
 .input-container {
   display: flex;
@@ -31,11 +31,16 @@
   resize: horizontal;
 }
 .add-destination-form button {
-  margin-top: 8px;
+  margin-top: 1rem;
   border: none;
   padding: 8px 16px;
   border-radius: 8px;
-  color: white;
+  color: var(--color-white);
   background-color: green;
   cursor: pointer;
 }
+
+.add-destination-form p {
+  margin-top: 1rem;
+}
+

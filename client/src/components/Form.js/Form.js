@@ -6,9 +6,14 @@ import { UserContext } from '../../context/UserContext';
 export default function Form({baseUrl}) {
 
 const [title,setTitle]=useState('')
+const [submit,setSubmit]=useState('');
 const [description,setDescription]=useState('')
 const [imageUrl,setImageUrl]=useState('')
 const {user,setUser}=useContext(UserContext)
+
+const submitButton() => {
+
+}
 
 const addNewDestination=(e)=>{ 
     e.preventDefault();
@@ -39,6 +44,10 @@ const addNewDestination=(e)=>{
                 <input value={imageUrl} onChange={(e)=>{setImageUrl(e.target.value)}} placeholder='Enter image url'/>
            </div>
            <button type="submit">Submit</button>
+           {
+              submit ? <p style={{"color":"green"}}>Add one for the team!</p> : <p style={{"color":"green"}}>You successfully added a destination!</p> 
+           }
+           
           
            
        </form>

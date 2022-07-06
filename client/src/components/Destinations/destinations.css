@@ -27,17 +27,15 @@
   justify-content: center;
   text-align: center;
   border-radius: 2rem;
-  border: solid 2px var(--color-blue-dark);
-  /* -webkit-box-shadow:0px 10px 39px 10px rgba(62,66,66,0.4);
-  -moz-box-shadow: 0px 10px 39px 10px rgba(62,66,66,0.4);
-  box-shadow: 0px 10px 39px 10px rgba(62,66,66,0.4); */
+  border: solid 0.2rem var(--color-blue-dark);
+  box-shadow: 5px 5px 5px 5px rgba(62,66,66,0.4);
 }
 .destination-img {
   width: 80%;
   height: 40%;
   background: var(--color-blue-dark);
   border-radius: 2rem;
-  border: solid 4px var(--color-blue-dark);
+  border: solid 0.2rem var(--color-blue-dark);
 }
 .destination-info {
   display: flex;
@@ -51,13 +49,13 @@
 }
 
 .destination-card button {
-  background-color: rgb(218, 76, 76);
+  background-color: var(--color-red);
   border: none;
   border-radius: 8px;
   padding: 8px 16px;
   margin-top: 2rem;
   cursor: pointer;
-  color: white;
+  color: var(--color-white);
 }
 
 /* ========================== MEDIA QUERIES (MEDIUM DEVICES) ======================= */
