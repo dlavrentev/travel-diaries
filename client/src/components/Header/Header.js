@@ -8,6 +8,7 @@ import { UserContext } from '../../context/UserContext';
 export default function Header({baseUrl}) {
   const [signupSuccess,setSignupSuccess]=useState(false)
   const [loggedIn,setLoggedIn]=useState(false)
+  const [errorlog,setErrorlog]=useState('')
   const [modal,setModal]=useState(false)
   const [userExists,setUserExists]=useState(true)
   const [username,setUsername]=useState('')
@@ -33,6 +34,11 @@ export default function Header({baseUrl}) {
 
   }
  
+  const deleteError=() => {
+    setErrorlog(false);
+  }
+
+
   const handleLogin=(e)=>{ 
     e.preventDefault()
     axios.post(`${baseUrl}/users/login`,{
@@ -43,7 +49,9 @@ export default function Header({baseUrl}) {
       setLoggedIn(true)
       setModal(false)
     })
-    .catch(err=>console.log(err))
+    .catch(err=>{
+      setErrorlog(true)
+    })
 
   }
 
@@ -69,7 +77,7 @@ export default function Header({baseUrl}) {
          
          : <div className='profile-container-loggedout'>
              <p>Login to add destinations</p>
-             <button className='login-btn' onClick={()=>setModal(!modal)}>Login</button>
+             <button className='login-btn' onClick={() => { setModal(!modal); setErrorlog(false);}}>Login</button>
            </div>
         }
      
@@ -86,8 +94,10 @@ export default function Header({baseUrl}) {
                   <input type="password" placeholder="Enter password" onChange={(e)=>setPassword(e.target.value)}/>
                   <button className='login-btn' type="submit" onChange={(e)=>setImageUrl(e.target.value)}>Submit</button>
                 </form>
+                {errorlog ? <p style={{"color":"#FFE66D"}}>Wrong password or username..</p> : null }
                 <p>Don't have an account? <span onClick={()=>{setUserExists(false)}}>Sign up</span></p>
                 {message !== '' ? <p>{message}</p> : null}
+
               </div>
               : <div> 
                 <h2>Sign Up</h2>
