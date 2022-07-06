@@ -14,6 +14,15 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --color-bg: #f7fff7;
+  --color-blue-dark: #1a535c;
+  --color-blue-light: #4ecdc4;
+  --color-red: #FF6b6b;
+  --color-yellow: #FFE66D;
+}
+
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -21,4 +30,17 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.7;
+  background: var(--color-bg);
+}
+
+/* ========================== MEDIA QUERIES (MEDIUM DEVICES) ======================= */
+
+@media screen and (max-width: 1024px) {
+ 
+}
+
+/* ========================== MEDIA QUERIES (SMALL DEVICES) ======================= */
+
+@media screen and (max-width: 600px) {
+  
 }
