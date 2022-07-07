@@ -1,14 +1,33 @@
 .details__container {
+    margin: 0 auto;
+    width: 80%;
     display: grid;
-    grid-template-columns: (3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 
-/* .details__profileimg {
-    height: 30px;
-    width: 30px;
+.details__profileimg {
+    height: 5rem;
+    width: 5rem;
 }
 
 .details__cityimg {
-    height: 30px;
-    width: 30px;
-} */
+    width: 20rem;
+}
+
+.details__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.details__mid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.details__bot {
+    
+}
