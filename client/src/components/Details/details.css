@@ -1,0 +1,14 @@
+.details__container {
+    display: grid;
+    grid-template-columns: (3, 1fr);
+}
+
+/* .details__profileimg {
+    height: 30px;
+    width: 30px;
+}
+
+.details__cityimg {
+    height: 30px;
+    width: 30px;
+} */
