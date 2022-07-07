@@ -1,7 +1,11 @@
+.details__body {
+    height: 100vh;
+}
+
+
 .details__container {
     margin: 0 auto;
     width: 80%;
-    height: 100vh;
     display: grid;
     grid-template-rows: 2fr 2fr 0.5fr;
     background: black;
