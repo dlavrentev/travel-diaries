@@ -1,5 +1,8 @@
 .details__body {
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -7,7 +10,7 @@
     margin: 0 auto;
     width: 80%;
     display: grid;
-    grid-template-rows: 2fr 2fr 0.5fr;
+    grid-template-rows: 3fr 3fr 1fr;
     background: black;
 }
 
