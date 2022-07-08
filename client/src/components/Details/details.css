@@ -57,11 +57,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: var(--color-blue-dark);
     border-radius: 1rem;
     margin: 1rem 0;
     padding-bottom: 1rem;
-    color: var(--color-yellow);
+    color: var(--color-black);
 }
 
 .details__bot {
