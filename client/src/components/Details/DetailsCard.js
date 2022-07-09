@@ -11,6 +11,8 @@ const {cityid} = useParams;
 
 
 
+console.log(destinations);
+
   return (
         <div className='details__container'>
          <div className='details__top'>
