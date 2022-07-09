@@ -1,17 +1,18 @@
 import React from 'react'
 import './../Details/details.css'
-import { useParams } from 'react-router-dom';
-
+import { useParams } from 'react-router-dom'
 
 
 
 const DetailsCard = ({destinations}) => {
 
-const {cityid} = useParams;
+const {cityid} = useParams();
+console.log(cityid)
 
 
 
-console.log(destinations);
+
+
 
   return (
         <div className='details__container'>
