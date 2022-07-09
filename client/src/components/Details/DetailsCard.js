@@ -1,18 +1,24 @@
-import React from 'react'
+import axios from 'axios'
+import React, {useEffect, useState} from 'react'
 import './../Details/details.css'
 import { useParams } from 'react-router-dom'
 
 
 
-const DetailsCard = ({destinations}) => {
+const DetailsCard = ({destinations, baseUrl}) => {
 
 const {cityid} = useParams();
-
-
-
 const index = destinations.findIndex( (element) => element.id == cityid);
+const userIndex = user.findIndex((element) => element.)
+const [user,setUser] = useState('')
 
-console.log(index)
+   useEffect(() => {
+      axios.get('http://localhost:4000/users')
+       .then(res=>{
+         setUser(res.data)
+       })
+       .catch(err=>console.log(err))
+    }, [])
 
 
 
