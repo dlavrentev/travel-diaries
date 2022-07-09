@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React,{ useEffect, useState} from 'react'
 import './App.css';
 import {
 	BrowserRouter,
@@ -42,7 +42,7 @@ useEffect(() => {
               <Routes>
                 <Route path="/" element={<Destinations destinations={destinations} />}/>
                 <Route path="/add-destination" element={<Form baseUrl={baseUrl} />}/>
-                <Route path="/destination-details/" element={<Details destinations={destinations} />}/>
+                <Route path="/destination-details/:cityid" element={<Details destinations={destinations} />}/>
               </Routes>
         <Footer/>
         </BrowserRouter>

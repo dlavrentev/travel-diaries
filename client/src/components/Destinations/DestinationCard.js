@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 export default function DestinationCard({destination}) {
   
 
+const linkDestination = `/destination-details/${destination.id}`;
 
 
   return (
@@ -16,7 +17,7 @@ export default function DestinationCard({destination}) {
         
         </div> 
         <div>
-          <Link to='/destination-details/'><button>See details</button></Link>
+          <Link to={linkDestination}><button>See details</button></Link>
         </div>
         
     </div>
