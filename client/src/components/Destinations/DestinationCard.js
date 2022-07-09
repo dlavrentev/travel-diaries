@@ -16,7 +16,7 @@ export default function DestinationCard({destination}) {
         
         </div> 
         <div>
-          <Link to='/destination-details'><button>See details</button></Link>
+          <Link to='/destination-details/'><button>See details</button></Link>
         </div>
         
     </div>
