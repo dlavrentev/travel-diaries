@@ -3,6 +3,9 @@ import "./destinations.css"
 import DestinationCard from './DestinationCard'
 
 export default function Destinations({destinations}) {
+
+  
+
   return (
     <div className='destinations-body'>
       <h1>All destinations</h1>
