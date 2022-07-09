@@ -4,6 +4,7 @@ import {
 	BrowserRouter,
 	Route, 
 	Routes,
+  useParams
 } from 'react-router-dom';
 import axios from 'axios';
 import Destinations from './components/Destinations/Destinations';
@@ -42,7 +43,7 @@ useEffect(() => {
               <Routes>
                 <Route path="/" element={<Destinations destinations={destinations} />}/>
                 <Route path="/add-destination" element={<Form baseUrl={baseUrl} />}/>
-                <Route path="/destination-details" element={<Details destinations={destinations} />}/>
+                <Route path="/destination-details/:cityid" element={<Details destinations={destinations} />}/>
               </Routes>
         <Footer/>
         </BrowserRouter>
