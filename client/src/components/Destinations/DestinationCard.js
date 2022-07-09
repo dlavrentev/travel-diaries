@@ -1,16 +1,10 @@
-import axios from 'axios'
-import React,{useEffect,useState} from 'react'
+
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function DestinationCard({destination}) {
-  const [userId,setUserId]=useState()
+  
 
-const destinationNumber = destination.id;
-const destinationLink = `/destination-details/${destinationNumber}`
-
-const handleDelete=()=>{
- 
-}
 
 
   return (
@@ -22,11 +16,7 @@ const handleDelete=()=>{
         
         </div> 
         <div>
-          <Link to={destinationLink}><button>See details</button></Link>
-          {
-            userId===destination.user_id ? <button onClick={handleDelete}>delete</button> : null
-          }
-          
+          <Link to='/destination-details'><button>See details</button></Link>
         </div>
         
     </div>
