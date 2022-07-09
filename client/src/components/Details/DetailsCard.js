@@ -8,7 +8,8 @@ import { useParams } from 'react-router-dom';
 const DetailsCard = ({destinations}) => {
 
 const {cityid} = useParams;
-console.log(destinations)
+
+
 
   return (
         <div className='details__container'>
