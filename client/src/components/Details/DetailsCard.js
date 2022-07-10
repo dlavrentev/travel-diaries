@@ -5,20 +5,28 @@ import { useParams } from 'react-router-dom'
 
 
 
-const DetailsCard = ({destinations, baseUrl}) => {
+const DetailsCard = ({destinations}) => {
+
+const [user,setUser] = useState('')  
+   
+
+
 
 const {cityid} = useParams();
-const index = destinations.findIndex( (element) => element.id == cityid);
-const userIndex = user.findIndex((element) => element.)
-const [user,setUser] = useState('')
 
-   useEffect(() => {
-      axios.get('http://localhost:4000/users')
-       .then(res=>{
-         setUser(res.data)
-       })
-       .catch(err=>console.log(err))
-    }, [])
+const index = destinations.findIndex( (element) => element.id == cityid);
+const userId = destinations[index].user_id;
+const userIndex = user.findIndex( (element) => element.id == userId);
+
+
+useEffect(() => {
+   axios.get('http://localhost:4000/users')
+    .then(res=>{
+      setUser(res.data)
+    })
+    .catch(err=>console.log(err))
+ }, [])
+   
 
 
 
