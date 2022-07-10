@@ -18,7 +18,7 @@ const index = destinations.findIndex( (element) => element.id == cityid);
 const userId = destinations[index].user_id;
 const userIndex = destinations.findIndex( (element) => element.user_id == userId);
 
-console.log(user[0]);
+console.log(user[0].username);
 
 
 useEffect(() => {
