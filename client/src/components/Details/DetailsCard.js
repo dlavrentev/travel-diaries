@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom'
 
 const DetailsCard = ({destinations}) => {
 
-const [benutzer,setBenutzer] = useState('')  
+const [user,setUser] = useState([]);  
    
 
 
@@ -18,13 +18,13 @@ const index = destinations.findIndex( (element) => element.id == cityid);
 const userId = destinations[index].user_id;
 const userIndex = destinations.findIndex( (element) => element.user_id == userId);
 
-console.log(benutzer[7].username)
+console.log(user[0]);
 
 
 useEffect(() => {
    axios.get('http://localhost:4000/users')
     .then(res=>{
-      setBenutzer(res.data)
+      setUser(res.data)
     })
     .catch(err=>console.log(err))
  }, [])
@@ -44,7 +44,7 @@ useEffect(() => {
             <p>{destinations[index].description}</p>
          </div>
          <div className='details__bot'>
-            <h2>username</h2>
+            <h2>{userIndex}</h2>
             <h2>created</h2>
          </div>
     </div>
