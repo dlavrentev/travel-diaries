@@ -5,13 +5,13 @@ import DetailsCard from './DetailsCard'
 
 
 
-const Details = ({destinations}) => {
+const Details = ({destinations, usercontext}) => {
 
  
 
   return (
     <div className='details__body'>
-        <DetailsCard destinations={destinations}/>
+        <DetailsCard destinations={destinations} usercontext={usercontext}/>
     </div>
     
   )
