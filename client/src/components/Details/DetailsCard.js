@@ -41,7 +41,7 @@ useEffect(() => {
   return (
         <div className='details__container'>
          <div className='details__top'>
-            <div className="details__profileimg"><img alt='profile'src={usercontext[userIndex].imageUrl}></img></div>
+            <div className="details__profileimg"><img alt='profile'src={user.imageUrl}></img></div>
             <div className="details__cityimg"><img alt='city' src={currentDestination.imageUrl}></img></div>
             <h2 className='details__h2'>{currentDestination.id}</h2>
          </div>
@@ -50,8 +50,8 @@ useEffect(() => {
             <p>{currentDestination.description}</p>
          </div>
          <div className='details__bot'>
-            <h2>{usercontext[userIndex].username}</h2>
-            <h2>{usercontext[userIndex].created_at}</h2>
+            <h2>{user.username}</h2>
+            <h2>{user.created_at}</h2>
          </div>
     </div>
   )
