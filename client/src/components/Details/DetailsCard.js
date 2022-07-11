@@ -18,7 +18,14 @@ const userId = destinations[index].user_id;
 const userIndex = destinations.findIndex( (element) => element.user_id == userId);
 
 
-
+useEffect(() => {
+   axios.get(`http://localhost:4000/destinations/${cityid}`)
+   .then (res=>{
+      setUser(res.data);
+   })
+   .catch(err=>console.log(err))
+ }, [])
+ 
 
 
    
