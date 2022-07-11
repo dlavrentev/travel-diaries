@@ -19,7 +19,7 @@ useEffect(() => {
    axios.get(`http://localhost:4000/destinations/${cityid}`)
    .then (res=>{
       setCurrentDestination(res.data);
-      axios.get(`http://localhost:4000/users/userId${res.data.userId}`)
+      axios.get(`http://localhost:4000/users/userId/${res.data.user_id}`)
       .then (res=>{
          setUser(res.data);
       })
