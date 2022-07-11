@@ -10,7 +10,7 @@ import Destinations from './components/Destinations/Destinations';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Form from './components/Form.js/Form';
-import Details from './components/Details/Details';
+import DetailsCard from './components/Details/DetailsCard';
 import { UserContext } from './context/UserContext'
 
 
@@ -44,7 +44,7 @@ useEffect(() => {
               <Routes>
                 <Route path="/" element={<Destinations destinations={destinations} />}/>
                 <Route path="/add-destination" element={<Form baseUrl={baseUrl} />}/>
-                <Route path="/destination-details/:cityid" element={<Details />}/>
+                <Route path="/destination-details/:cityid" element={<DetailsCard  />}/>
               </Routes>
         <Footer/>
         </BrowserRouter>
