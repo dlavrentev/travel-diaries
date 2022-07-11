@@ -11,6 +11,16 @@ router.get('/destinations',(req,res)=>{
     .catch(error=>res.status(500).json(error))
 })
 
+router.get('/destinations/:id',(req,res)=>{
+    // const username = req.params.username
+     const {id} = req.params
+     Travels.findDestinationById(id)
+     .then(destination=>{
+         res.status(200).json(destination)
+     })
+     .catch(error=>res.status(500).json(error))
+    })
+
 
 router.post('/users/:id/destinations',(req,res)=>{
     const {id}= req.params;

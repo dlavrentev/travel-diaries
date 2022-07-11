@@ -43,6 +43,10 @@ function getAllDestinations(){
   return db('destinations').orderBy('id','desc')
 }
 
+function findDestinationById(id){
+  return db('destinations').where({id:id}).first()
+}
+
 async function addDestination(newDestination){
   await db('destinations')
   .where({user_id:newDestination.user_id})
@@ -80,6 +84,7 @@ module.exports = {
     removeDestination,
     updateDestination,
     getUserDestinations,
-    groupDestinations
+    groupDestinations,
+    findDestinationById
 }
 
