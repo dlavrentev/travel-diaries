@@ -22,7 +22,6 @@ function App() {
 
 const baseUrl = 'http://localhost:4000'
 const [destinations,setDestinations]=useState([]);
-const [usercontext, setUsercontext]=useState([]);
 const [user,setUser]=useState({});
 
 
@@ -34,13 +33,7 @@ useEffect(() => {
    .catch(err=>console.log(err))
 }, [])
 
-useEffect(() => {
-  axios.get('http://localhost:4000/users')
-   .then(res=>{
-     setUsercontext(res.data)
-   })
-   .catch(err=>console.log(err))
-}, [])
+
 
 
 
@@ -51,7 +44,7 @@ useEffect(() => {
               <Routes>
                 <Route path="/" element={<Destinations destinations={destinations} />}/>
                 <Route path="/add-destination" element={<Form baseUrl={baseUrl} />}/>
-                <Route path="/destination-details/:cityid" element={<Details destinations={destinations} usercontext={usercontext} baseUrl={baseUrl} />}/>
+                <Route path="/destination-details/:cityid" element={<Details />}/>
               </Routes>
         <Footer/>
         </BrowserRouter>

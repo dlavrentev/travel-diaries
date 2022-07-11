@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 
 
 
-const DetailsCard = ({destinations, usercontext}) => {
+const DetailsCard = () => {
 
    
 const [user,setUser] = useState([]);
@@ -13,10 +13,6 @@ const [currentDestination, setCurrentDestination] = useState([]);
 
 
 const {cityid} = useParams();
-
-// const index = destinations.findIndex( (element) => element.id == cityid);
-// const userId = destinations[index].user_id;
-// const userIndex = destinations.findIndex( (element) => element.user_id == userId);
 
 
 useEffect(() => {
