@@ -23,7 +23,11 @@ useEffect(() => {
    axios.get(`http://localhost:4000/destinations/${cityid}`)
    .then (res=>{
       setCurrentDestination(res.data);
-      axios.get(`http://localhost:4000/users/${cityid}`)
+      axios.get(`http://localhost:4000/users/userId${res.data.userId}`)
+      .then (res=>{
+         setUser(res.data);
+      })
+      .catch(err=>console.log(err))
    })
    .catch(err=>console.log(err))
  }, [])
