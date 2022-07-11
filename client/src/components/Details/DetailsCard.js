@@ -22,7 +22,8 @@ const {cityid} = useParams();
 useEffect(() => {
    axios.get(`http://localhost:4000/destinations/${cityid}`)
    .then (res=>{
-      setUser(res.data);
+      setCurrentDestination(res.data);
+      axios.get(`http://localhost:4000/users/${cityid}`)
    })
    .catch(err=>console.log(err))
  }, [])
