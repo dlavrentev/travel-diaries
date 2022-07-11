@@ -16,6 +16,11 @@ function findUserByUsername(username){
   return db('users').where({username:username}).first();
 }
 
+function findUserByUserId(id){
+  return db('users').where({id:id}).first();
+
+}
+
 function removeUser(id){
   return db('users').where({id:id}).del()
 
@@ -85,6 +90,7 @@ module.exports = {
     updateDestination,
     getUserDestinations,
     groupDestinations,
-    findDestinationById
+    findDestinationById,
+    findUserByUserId
 }
 

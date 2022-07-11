@@ -44,7 +44,7 @@ router.post('/users/register',(req,res)=>{
 
 
 // GET A USER BY USERNAME
-router.get('/users/:username',(req,res)=>{
+router.get('/users/username/:username',(req,res)=>{
 // const username = req.params.username
  const {username} = req.params
  Travels.findUserByUsername(username)
@@ -54,9 +54,20 @@ router.get('/users/:username',(req,res)=>{
  .catch(error=>res.status(500).json(error))
 })
 
+
+router.get('/users/userId/:id',(req,res)=>{
+    // const username = req.params.username
+     const {id} = req.params
+     Travels.findUserByUserId(id)
+     .then(user=>{
+         res.status(200).json(user)
+     })
+     .catch(error=>res.status(500).json(error))
+    })
+
 // DELETE A USER
 
-router.delete('/users/:id',(req,res)=>{
+router.delete('/users/username/:id',(req,res)=>{
     // const id = req.params.id
     const {id}=req.params
     Travels.removeUser(id)
