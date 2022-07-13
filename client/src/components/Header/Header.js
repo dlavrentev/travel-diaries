@@ -1,4 +1,4 @@
-import React,{useState,useEffect, useContext} from 'react'
+import React,{useState, useContext, useRef} from 'react'
 import axios from 'axios';
 import {Link} from "react-router-dom"
 import './header.css'
@@ -15,11 +15,14 @@ export default function Header({baseUrl}) {
   const [password,setPassword]=useState('')
   const [imageUrl,setImageUrl]=useState('')
   const [message,setMessage]=useState('')
+  
+  const headerRef = useRef();
+  const {logincolor,setLoginColor} = useState(true);
 
   const {user,setUser}=useContext(UserContext)
-  const {logincolor,setLoginColor} = useState(true);
   
-  const disableLogin=(e) =>{
+  
+  const changeColorBtn=() =>{
     e.currentTarget.style.backgroundColor = 'salmon';
   }
 
