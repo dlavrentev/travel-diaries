@@ -85,7 +85,10 @@ export default function Header({baseUrl}) {
          </div>
          
          : <div className='profile-container-loggedout'>
-             <button className='login-btn' ref={colorRef} onClick={() => { setModal(!modal); setErrorlog(false);}}>Login</button>
+             {
+              modal ? <button className='login-btn' style={{backgroundColor: "green"}} onClick={() => { setModal(!modal); setErrorlog(false);}}>Login</button>
+              : <button className='login-btn' style={{backgroundColor: "salmon"}}  onClick={() => { setModal(!modal); setErrorlog(false);}}>Login</button>
+             }
            </div>
         }
      
