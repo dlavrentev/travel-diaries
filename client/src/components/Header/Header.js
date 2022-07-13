@@ -22,15 +22,6 @@ export default function Header({baseUrl}) {
   const {user,setUser}=useContext(UserContext)
   
   
-  // const changeColorBtn=() => {
-  //   if (!modal) {
-  //     colorRef.current.style.backgroundColor = 'salmon';
-  //   } else if (modal) {
-  //     colorRef.current.style.backgroundColor = 'green';
-  //   }
-     
-  // }
-
   
   const handleSignup=(e)=>{
     e.preventDefault()
@@ -86,8 +77,8 @@ export default function Header({baseUrl}) {
          
          : <div className='profile-container-loggedout'>
              {
-              modal ? <button className='login-btn' style={{backgroundColor: "green"}} onClick={() => { setModal(!modal); setErrorlog(false);}}>Login</button>
-              : <button className='login-btn' style={{backgroundColor: "salmon"}}  onClick={() => { setModal(!modal); setErrorlog(false);}}>Login</button>
+              modal ? <button className='login-btn' style={{backgroundColor: "salmon"}} onClick={() => { setModal(!modal); setErrorlog(false);}}>Login</button>
+              : <button className='login-btn' style={{backgroundColor: "green"}}  onClick={() => { setModal(!modal); setErrorlog(false);}}>Login</button>
              }
            </div>
         }
