@@ -17,10 +17,13 @@ export default function Header({baseUrl}) {
   const [message,setMessage]=useState('')
 
   const {user,setUser}=useContext(UserContext)
+  const {logincolor,setLoginColor} = useState(true);
+  
+  const disableLogin=(e) =>{
+    e.currentTarget.style.backgroundColor = 'salmon';
+  }
 
   
-  
-
   const handleSignup=(e)=>{
     e.preventDefault()
     axios.post(`${baseUrl}/users/register`,{
