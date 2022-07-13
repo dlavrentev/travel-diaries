@@ -16,15 +16,20 @@ export default function Header({baseUrl}) {
   const [imageUrl,setImageUrl]=useState('')
   const [message,setMessage]=useState('')
   
-  const headerRef = useRef();
-  const {logincolor,setLoginColor} = useState(true);
+  const colorRef = useRef();
+  
 
   const {user,setUser}=useContext(UserContext)
   
   
-  const changeColorBtn=() =>{
-    e.currentTarget.style.backgroundColor = 'salmon';
-  }
+  // const changeColorBtn=() => {
+  //   if (!modal) {
+  //     colorRef.current.style.backgroundColor = 'salmon';
+  //   } else if (modal) {
+  //     colorRef.current.style.backgroundColor = 'green';
+  //   }
+     
+  // }
 
   
   const handleSignup=(e)=>{
@@ -51,6 +56,7 @@ export default function Header({baseUrl}) {
       setUser(res.data)
       setLoggedIn(true)
       setModal(false)
+      colorRef.current.style.backgroundColor = 'salmon';
     })
     .catch(err=>{
       setErrorlog(true)
@@ -79,7 +85,7 @@ export default function Header({baseUrl}) {
          </div>
          
          : <div className='profile-container-loggedout'>
-             <button className='login-btn' onClick={() => { setModal(!modal); setErrorlog(false);}}>Login</button>
+             <button className='login-btn' ref={colorRef} onClick={() => { setModal(!modal); setErrorlog(false);}}>Login</button>
            </div>
         }
      
