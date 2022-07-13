@@ -67,9 +67,12 @@ export default function Header({baseUrl}) {
         {
          loggedIn ?
          <div className='profile-container-loggedin'>
+           <div className='add-destination-container'>
            <button><Link to="/add-destination">Add a new destination</Link></button>
+           <p>{user.username}</p>
+           </div>
+           
            <div className='img-container'>
-            <p>User: {user.username}</p>
             <img src={user.imageUrl} alt="avatar"/>
            </div>  
            <button className='logout-btn' onClick={handleLogout}>Logout</button>
