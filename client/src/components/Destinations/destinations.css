@@ -8,7 +8,7 @@
   min-height: 100vh;
   padding: 50px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 
@@ -16,7 +16,7 @@
 /* DESTINATION CARD */
 .destination-card {
   height: 450px;
-  max-width: 90%;
+  max-width: 400px;
   background-color: var(--color-blue-light);
   margin: 12px 12px 0 0;
   overflow: hidden;
@@ -55,6 +55,12 @@
   margin-top: 2rem;
   cursor: pointer;
   color: var(--color-white);
+}
+
+@media screen and (max-width: 1280px) {
+  .destinations-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* ========================== MEDIA QUERIES (MEDIUM DEVICES) ======================= */

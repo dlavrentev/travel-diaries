@@ -73,7 +73,6 @@ export default function Header({baseUrl}) {
          </div>
          
          : <div className='profile-container-loggedout'>
-             <p>Login to add destinations</p>
              <button className='login-btn' onClick={() => { setModal(!modal); setErrorlog(false);}}>Login</button>
            </div>
         }
