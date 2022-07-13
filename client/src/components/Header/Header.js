@@ -63,7 +63,8 @@ export default function Header({baseUrl}) {
 
   return (
     <div className='header-container'>
-      <h1><Link to="/">Travel Diaries</Link></h1>
+      <h1><Link className='td-big' to="/">Travel Diaries</Link></h1>
+      <h1><Link className='td-small' to="/">TD</Link></h1>
         {
          loggedIn ?
          <div className='profile-container-loggedin'>

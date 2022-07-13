@@ -4,38 +4,36 @@ a {
 }
 .header-container {
   height: 70px;
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
+  justify-content: space-around;
   background-color: var(--color-yellow);
+  overflow: hidden;
 }
 
 .add-destination-container {
    display: flex;
    flex-direction: column;
    align-items: center;
+   border-radius: 1rem;
 
 }
 .img-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: auto;
-  background-color: yellow;
-  height: ;
+  
 }
 .img-container img {
-  height: 5rem;
-  width: 5rem;
+  height: 4rem;
+  width: 4rem;
   border-radius: 50%;
+  border: solid 2px var(--color-black);
 }
 .profile-container-loggedin {
   display: flex;
   align-items: center;
-  width: 25%;
-  justify-content: space-between;
+  gap: 1rem;
 }
 .logout-btn {
   border: none;
@@ -105,4 +103,22 @@ a {
 .header-modal p {
   margin: auto;
   max-width: fit-content;
+}
+
+
+/* ========================== MEDIA QUERIES (MEDIUM DEVICES) ======================= */
+
+@media screen and (min-width: 601px) {
+  .td-small {
+    display: none;
+  }
+
+}
+
+/* ========================== MEDIA QUERIES (SMALL DEVICES) ======================= */
+
+@media screen and (max-width: 600px) {
+  .td-big {
+    display: none;
+  }
 }
