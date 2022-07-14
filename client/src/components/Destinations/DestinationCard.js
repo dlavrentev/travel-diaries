@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 
 export default function DestinationCard({destination}) {
   
-
-
-
+  const handleDelete=()=>{
+ 
+  }
 
   return (
     <div className='destination-card'>
@@ -17,7 +17,10 @@ export default function DestinationCard({destination}) {
         
         </div> 
         <div>
-          <Link to={`/destination-details/${destination.id}`}><button>See details</button></Link>
+          <Link to={`/destination-details/${destination}`}><button>See details</button></Link>
+          {
+            userId===destination.user_id ? <button onClick={handleDelete}>delete</button> :null
+          }
         </div>
         
     </div>
