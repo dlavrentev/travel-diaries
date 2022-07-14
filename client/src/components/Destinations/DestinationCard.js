@@ -1,8 +1,10 @@
 
-import React from 'react'
+import React,{useState, useContext} from 'react'
 import { Link } from 'react-router-dom'
+import { UserContext } from '../../context/UserContext'
 
 export default function DestinationCard({destination}) {
+  const {user,setUser}=useContext(UserContext)
   
   const handleDelete=()=>{
  
@@ -17,9 +19,9 @@ export default function DestinationCard({destination}) {
         
         </div> 
         <div>
-          <Link to={`/destination-details/${destination}`}><button>See details</button></Link>
+          <Link to={`/destination-details/${destination}`}><button style={{marginBottom:"5px"}}>See details</button></Link>
           {
-            userId===destination.user_id ? <button onClick={handleDelete}>delete</button> :null
+            user.id===destination.user_id ? <button onClick={handleDelete}>Delete</button> :null
           }
         </div>
         
