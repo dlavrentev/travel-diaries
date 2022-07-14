@@ -2,7 +2,7 @@ import React from 'react'
 import "./destinations.css"
 import DestinationCard from './DestinationCard'
 
-export default function Destinations({destinations}) {
+export default function Destinations({destinations, baseUrl}) {
 
   
 
@@ -12,7 +12,7 @@ export default function Destinations({destinations}) {
          <div className='destinations-container'>
          {
             destinations.map(destination=>{
-               return <DestinationCard key={destination.id} destination={destination} />
+               return <DestinationCard key={destination.id} destination={destination} baseUrl={baseUrl} />
             })
         }</div>
         

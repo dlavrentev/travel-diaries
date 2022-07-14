@@ -1,14 +1,22 @@
 
-import React,{useState, useContext} from 'react'
-import { Link } from 'react-router-dom'
-import { UserContext } from '../../context/UserContext'
+import React,{useState, useContext} from 'react';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../../context/UserContext';
+import axios from 'axios';
 
-export default function DestinationCard({destination}) {
+export default function DestinationCard({destination,baseUrl}) {
   const {user,setUser}=useContext(UserContext)
   
-  const handleDelete=()=>{
- 
+  
+  
+  const handleDelete=(e)=>{
+    e.preventDefault()
+    axios.delete(`${baseUrl}/destinations/${destination.id}`)
+    .then(() => alert('Delete successful'));
   }
+
+
+  
 
   return (
     <div className='destination-card'>

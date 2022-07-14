@@ -42,7 +42,7 @@ useEffect(() => {
       <BrowserRouter>
         <Header baseUrl={baseUrl} />
               <Routes>
-                <Route path="/" element={<Destinations destinations={destinations} />}/>
+                <Route path="/" element={<Destinations destinations={destinations} baseUrl={baseUrl}/>}/>
                 <Route path="/add-destination" element={<Form baseUrl={baseUrl} />}/>
                 <Route path="/destination-details/:cityid" element={<DetailsCard  />}/>
               </Routes>
