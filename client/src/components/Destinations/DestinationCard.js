@@ -21,7 +21,7 @@ export default function DestinationCard({destination}) {
         <div>
           <Link to={`/destination-details/${destination}`}><button style={{marginBottom:"5px"}}>See details</button></Link>
           {
-            user.id===destination.user_id ? <button onClick={handleDelete}>Delete</button> :null
+            user.id===destination.user_id ? <button style={{marginLeft:"5px"}} onClick={handleDelete}>Delete</button> :null
           }
         </div>
         
