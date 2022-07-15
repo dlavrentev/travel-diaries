@@ -70,7 +70,7 @@ a {
   background-color: var(--color-red);
   border-radius: 1rem;
   height: auto;
-  width: 400px;
+  min-width: 300px;
   padding: 1rem;
   color: var(--color-white);
 }
