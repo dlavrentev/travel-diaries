@@ -6,9 +6,10 @@ a {
   height: 70px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: var(--color-yellow);
   overflow: hidden;
+  padding: 0 10px;
 }
 
 .add-destination-container {
@@ -70,7 +71,7 @@ a {
   background-color: var(--color-red);
   border-radius: 1rem;
   height: auto;
-  min-width: 300px;
+  width: 300px;
   padding: 1rem;
   color: var(--color-white);
 }
