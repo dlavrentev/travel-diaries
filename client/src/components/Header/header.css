@@ -74,6 +74,7 @@ a {
   width: 300px;
   padding: 1rem;
   color: var(--color-white);
+  border: solid 2px var(--color-black)
 }
 .header-modal h3 {
   max-width: fit-content;
