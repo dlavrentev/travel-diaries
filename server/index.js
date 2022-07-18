@@ -1,7 +1,8 @@
+// require("dotenv").config();
 const { response } = require('express');
 const express = require('express');
 const app = express()
-const port = process.env.PORT || 4000;
+const port = 8000;
 app.use(express.json());
 const shortid = require('shortid');
 const Travels = require('./dbHelpers')
@@ -10,7 +11,7 @@ app.use(bodyParser.json())
 const bcrypt = require('bcryptjs')
 const cors = require('cors');
 app.use(cors({origin:'*'}))
-require("dotenv").config();
+
 
 // Import Routers
 
