@@ -1,7 +1,7 @@
 const { response } = require('express');
 const express = require('express');
 const app = express()
-const PORT = 4000;
+const port = process.env.PORT || 4000;
 app.use(express.json());
 const shortid = require('shortid');
 const Travels = require('./dbHelpers')
@@ -10,6 +10,7 @@ app.use(bodyParser.json())
 const bcrypt = require('bcryptjs')
 const cors = require('cors');
 app.use(cors({origin:'*'}))
+require("dotenv").config();
 
 // Import Routers
 
@@ -29,6 +30,6 @@ app.get('/',(req, res)=>{
 
 
 
-app.listen(PORT,()=>{
-    console.log(`My server is running at port ${PORT}`)
+app.listen(port,()=>{
+    console.log(`My server is running at port ${port}`)
 })
