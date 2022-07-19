@@ -2,7 +2,7 @@
 // const config = require('./knexfile');
 // const db = knex(config.development)
 
-const db = require('./dbConfig')
+const db = require('./dbConfig')  // ready for deployment
 
 //USERS FUNCTIONS
 function getAllUsers(){ 
