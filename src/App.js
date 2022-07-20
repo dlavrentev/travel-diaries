@@ -26,7 +26,7 @@ const [user,setUser]=useState({});
 
 
 useEffect(() => {
-  axios.get(`${baseUrl}/destinations`)
+  axios.get('https://travel-diaries-project.herokuapp.com/destinations')
    .then(res=>{
      setDestinations(res.data)
    })
