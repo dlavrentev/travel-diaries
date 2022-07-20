@@ -16,10 +16,10 @@ const {cityid} = useParams();
 
 
 useEffect(() => {
-   axios.get(`${baseUrl}/${cityid}`)
+   axios.get(`${baseUrl}/destinations/${cityid}`)
    .then (res=>{
       setCurrentDestination(res.data);
-      axios.get(`${baseUrl}/${res.data.user_id}`)
+      axios.get(`${baseUrl}/users/userId/${res.data.user_id}`)
       .then (res=>{
          setUser(res.data);
       })
