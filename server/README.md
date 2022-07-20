@@ -1,2 +1,0 @@
-# crud
- Backend App Project

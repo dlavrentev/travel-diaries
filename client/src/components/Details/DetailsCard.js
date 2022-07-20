@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 
 
 
-const DetailsCard = () => {
+const DetailsCard = ({baseUrl}) => {
 
    
 const [user,setUser] = useState([]);
@@ -16,10 +16,10 @@ const {cityid} = useParams();
 
 
 useEffect(() => {
-   axios.get(`http://localhost:4000/destinations/${cityid}`)
+   axios.get(`${baseUrl}/${cityid}`)
    .then (res=>{
       setCurrentDestination(res.data);
-      axios.get(`http://localhost:4000/users/userId/${res.data.user_id}`)
+      axios.get(`${baseUrl}/${res.data.user_id}`)
       .then (res=>{
          setUser(res.data);
       })

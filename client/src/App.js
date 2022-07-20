@@ -20,7 +20,7 @@ function App() {
 
 
 
-const baseUrl = 'http://localhost:4000'
+const baseUrl = 'https://travel-diaries-project.herokuapp.com'
 const [destinations,setDestinations]=useState([]);
 const [user,setUser]=useState({});
 
@@ -44,7 +44,7 @@ useEffect(() => {
               <Routes>
                 <Route path="/" element={<Destinations destinations={destinations} baseUrl={baseUrl}/>}/>
                 <Route path="/add-destination" element={<Form baseUrl={baseUrl} />}/>
-                <Route path="/destination-details/:cityid" element={<DetailsCard  />}/>
+                <Route path="/destination-details/:cityid" element={<DetailsCard baseUrl={baseUrl}  />}/>
               </Routes>
         <Footer/>
         </BrowserRouter>
