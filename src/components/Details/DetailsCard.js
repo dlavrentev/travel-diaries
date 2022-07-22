@@ -7,8 +7,11 @@ import { useParams } from 'react-router-dom'
 
 const DetailsCard = ({baseUrl}) => {
 
+
+
    
 const [user,setUser] = useState([]);
+const [created,setCreated] =useState([]);
 const [currentDestination, setCurrentDestination] = useState([]);
 
 
@@ -22,6 +25,7 @@ useEffect(() => {
       axios.get(`${baseUrl}/users/userId/${res.data.user_id}`)
       .then (res=>{
          setUser(res.data);
+         setCreated(res.data.created_at.substring(0,10))
       })
       .catch(err=>console.log(err))
    })
@@ -48,7 +52,7 @@ useEffect(() => {
    </div>
    <div className='details__bot'>
       <h2>{user.username}</h2>
-      <h2>{user.created_at}</h2>
+      <h2>{created}</h2>
    </div>
 </div>
 </div>
